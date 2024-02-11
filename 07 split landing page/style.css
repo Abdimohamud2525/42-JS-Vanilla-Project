@@ -1,0 +1,137 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --left-bg-color:  rgba(84, 87, 236, 0.7);
+    --left-bg-hover-color:  rgba(100, 150, 236, 0.5);
+    --right-bg-color:   rgba(43, 43, 43, 0.8);
+    --right-bg-hover-color:  rgba(109, 236, 100, 0.5);
+
+    
+    --hover-width: 75%;
+    --other-width: 25%;
+    --speed: 1000ms;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+h1{
+    position: absolute;
+    font-size: 4rem;
+    color: #fff;
+    left: 50%;
+    top: 20%;
+   transform: translateX(-50%);
+   white-space: nowrap;
+
+}
+.btn{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    border: #fff solid 0.2rem;
+    width: 15rem;
+    padding: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.container{
+
+    background-color: #333;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+
+}
+.split{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+
+
+}
+.split.left{
+    left: 0;
+    background: url(playStation.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.split.left .btn:hover{
+    background-color: var(--left-bg-hover-color);
+}
+
+.split.right .btn:hover{
+    background-color: var(--right-bg-hover-color);
+}
+.split.left::before{
+   content: "";
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background-color: var(--left-bg-color)
+}
+.split.right{
+    right: 0;
+    background: url(xbox.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--right-bg-color);
+}
+.split.left , .split.right , .split.left::before , .split.right::before{
+    transition: all var(--speed) ease-in-out;
+}
+.split.right::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(43, 43, 43, 0.8);
+ }
+.left-hover .left{
+    width: var(--hover-width);
+}
+.left-hover .right{
+    width: var(--other-width);
+}
+.right-hover .right{
+    width: var(--hover-width);
+}
+.right-hover .left{
+    width: var(--other-width);
+}
+@media (max-width: 800px) {
+    h1{
+        font-size: 3rem;
+       top: 30%;
+    }
+    .btn{
+        width: 12rem;
+        padding: 1.2rem;
+    }
+}
+@media (max-width: 400px){
+    h1{
+        font-size: 1rem;
+       
+    }
+    .btn{
+        width: 10rem;
+        padding: 1rem;
+    }
+}

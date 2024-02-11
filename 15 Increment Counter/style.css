@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #5C8374;
+    font-family: 'Heaving Letters Serif', serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0;
+}
+.counter-container{
+   display: flex;
+  flex-direction: column;
+  padding: 10px 50px;
+  color: #fff;
+  font-size: 25px;
+}
+.counter{
+    font-size: 60px;
+    margin-top: 20px;
+}
+
+@media(max-width: 580px){
+    body{
+        flex-direction: column;
+    }
+
+}
